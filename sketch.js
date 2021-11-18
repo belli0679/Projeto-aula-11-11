@@ -25,7 +25,7 @@ function setup(){
 
   barreiraEsquerda = createSprite(15, 200, 60, 400);
   barreiraEsquerda.visible = true;
-
+  //nesses dois visible só estão visiveis pra que eu consiga ver, na hora do envio vou trocar para false
   barreiraDireita = createSprite(380, 200, 40, 400);
   barreiraDireita.visible = true;
 
@@ -39,18 +39,17 @@ function draw() {
   
   background(0);
 
-  console.log(mouseX);
+  //console.log(mouseX);
   //console.log(mouseY);
   
   corredor.collide(barreiraEsquerda);
-  
+  corredor.collide(barreiraDireita);
+
   rua.velocityY = 4;
   if(rua.y > 400){
     rua.y = rua.height/10;
 
   }
-
-  
 
   corredor.x = World.mouseX;
 
